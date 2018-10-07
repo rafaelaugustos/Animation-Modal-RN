@@ -3,7 +3,7 @@ import { View, Text, StatusBar, Image, StyleSheet, ScrollView } from 'react-nati
 import Styles from './styles'
 
 // Components
-import { Header, Card } from './components'
+import { Header, Card, Modal } from './components'
 
 class App extends Component {
     state = {
@@ -25,6 +25,7 @@ class App extends Component {
                 />
 
                 <Header />
+                <Modal />
 
                 <View style={style.Content}>
                     <View style={{paddingLeft: 50}}>

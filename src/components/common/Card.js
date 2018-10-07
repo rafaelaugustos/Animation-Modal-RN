@@ -1,11 +1,11 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, TouchableOpacity, StyleSheet } from 'react-native'
 
 const Card = ({Last}) => {
     return(
-        <View style={[styles.Card, { marginRight: Last ? 50 : 0 }]}>
+        <TouchableOpacity style={[styles.Card, { marginRight: Last ? 50 : 0 }]}>
     
-        </View>
+        </TouchableOpacity>
     )
 }
 
