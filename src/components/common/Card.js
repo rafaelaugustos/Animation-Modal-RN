@@ -1,9 +1,9 @@
 import React from 'react'
 import { View, TouchableOpacity, StyleSheet } from 'react-native'
 
-const Card = ({Last}) => {
+const Card = ({Last, onPress}) => {
     return(
-        <TouchableOpacity style={[styles.Card, { marginRight: Last ? 50 : 0 }]}>
+        <TouchableOpacity style={[styles.Card, { marginRight: Last ? 50 : 0 }]} onPress={onPress}>
     
         </TouchableOpacity>
     )

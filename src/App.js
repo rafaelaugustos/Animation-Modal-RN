@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, StatusBar, Image, StyleSheet, ScrollView } from 'react-native'
+import { View, Text, StatusBar, Image, StyleSheet, ScrollView, Animated } from 'react-native'
 import Styles from './styles'
 
 // Components
@@ -7,16 +7,23 @@ import { Header, Card, Modal } from './components'
 
 class App extends Component {
     state = {
-        array: [1, 2]
+        array: [1, 2],
+        modal: true
     }
 
     _renderCard(){
         let last = this.state.array.length
 
         return this.state.array.map((item, index) => 
-            <Card Last={last === index + 1} />
+            <Card Last={last === index + 1} onPress={() => this._setValue()} />
         )
     }
+
+    _setValue(){
+        this.setState({modal: true})
+
+    }
+
     render(){
         return(
             <View style={Styles.Bg}>
@@ -25,7 +32,7 @@ class App extends Component {
                 />
 
                 <Header />
-                <Modal />
+                <Modal Show={this.state.modal} />
 
                 <View style={style.Content}>
                     <View style={{paddingLeft: 50}}>
